@@ -12,6 +12,8 @@ on early-init
     write /sys/block/mmcblk1/bdi/read_ahead_kb 512
 
 on init
+    export LD_PRELOAD "/system/lib/libboringssl-compat.so:/system/lib/liblge.so"
+
     mkdir /persist 0771 system system
 
     mkdir /sns 0755 system system
@@ -57,8 +59,6 @@ on fs
     chown system system /sys/bus/i2c/devices/0-0036/lm3697_rt_mode
 
 on post-fs
-    # export LD_PRELOAD /vendor/lib/libNimsWrap.so
-
     start sreadahead
     chown system lgkeyguard /sys/devices/virtual/input/lge_touch/keyguard
     chmod 664 /sys/devices/virtual/input/lge_touch/keyguard
@@ -244,9 +244,9 @@ on boot
     # Touch_Knock_on
     chown system system /sys/devices/virtual/input/lge_touch/lpwg_data
     chmod 664 /sys/devices/virtual/input/lge_touch/lpwg_data
-    chown system radio /sys/devices/virtual/input/lge_touch/lpwg_notify
-    chmod 664 /sys/devices/virtual/input/lge_touch/lpwg_notify
-    write /sys/devices/virtual/input/lge_touch/lpwg_notify "1 1 0 0"
+    chown system system /sys/devices/virtual/input/lge_touch/tap_to_wake
+    chmod 664 /sys/devices/virtual/input/lge_touch/tap_to_wake
+    write /sys/devices/virtual/input/lge_touch/tap_to_wake 1
     chown system system /sys/devices/virtual/input/lge_touch/lpwg_test_info
     chmod 644 /sys/devices/virtual/input/lge_touch/lpwg_test_info
     chown system system /sys/devices/virtual/input/lge_touch/lpwg_test_ctrl
@@ -322,6 +322,10 @@ on boot
     chown system lg_fota /persist-lg/fota
     chmod 0775 /persist-lg/fota
     chmod 0775 /persist-lg/fota/silence.txt
+
+    # Adaptive LMK
+    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
+    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
 
 on post-fs-data
     start last_kmsg_backup
@@ -884,13 +888,11 @@ service svelteoff /system/bin/logwrapper /system/bin/sh /system/etc/init.lge.sve
 	disabled
 	oneshot
 
-service thermal-engine /system/bin/thermal-engine -c /system/etc/thermal-engine-8974.conf
-   class main
-   user root
-   group root
-   socket thermal-send-client stream 0666 system system
-   socket thermal-recv-client stream 0660 system system
-   socket thermal-recv-passive-client stream 0666 system system
+# OSS thermal management
+service thermanager /system/bin/thermanager /system/etc/thermanager.xml
+    class late_start
+    user root
+    group root
 
 service time_daemon /system/bin/time_daemon
    class late_start
@@ -1217,7 +1219,6 @@ on property:wifi_ftm.diagd_start=0
 on usb_debug
     start usbdebug-manager
 
-# Performance
 on property:service.bootanim.exit=1
     write /sys/module/lpm_levels/enable_low_power/l2 "4"
     write /sys/module/msm_pm/modes/cpu0/power_collapse/suspend_enabled "1"
@@ -1261,26 +1262,8 @@ on property:service.bootanim.exit=1
 on property:init.svc.bootanim=running
     # Disable LG screen sharpening
     write /sys/devices/virtual/graphics/fb0/sharpening 0
-    setprop sys.perf.profile 2
 
 on property:init.svc.bootanim=stopped
-    setprop sys.perf.profile 1
-
-# CM Performance Profiles
-on property:sys.perf.profile=0
-    stop mpdecision
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-    write /sys/class/devfreq/qcom,cpubw.41/governor "powersave"
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor conservative
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor conservative
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor conservative
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor conservative
-    write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
-    start mpdecision
-
-on property:sys.perf.profile=1
     stop mpdecision
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
@@ -1290,7 +1273,6 @@ on property:sys.perf.profile=1
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "interactive"
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "interactive"
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "interactive"
-
     write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "20000 1400000:40000 1700000:20000"
     write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 90
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1497600
@@ -1308,15 +1290,3 @@ on property:sys.perf.profile=1
     start mpdecision
 
     setprop sys.io.scheduler bfq
-
-on property:sys.perf.profile=2
-    stop mpdecision
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-    write /sys/class/devfreq/qcom,cpubw.41/governor "performance"
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor performance
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor performance
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor performance
-    write /sys/class/kgsl/kgsl-3d0/devfreq/governor performance
