@@ -94,6 +94,7 @@ EXTENDED_FONT_FOOTPRINT := true
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Offmode Charging
+BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(LOCAL_PATH)/charger/images
 COMMON_GLOBAL_CFLAGS += \
     -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' \
     -DBOARD_CHARGING_CMDLINE_VALUE='"chargerlogo"'
@@ -115,9 +116,6 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
-
-# Radio
-BOARD_RIL_CLASS := ../../../device/lge/g3-common/ril/
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
