@@ -575,12 +575,10 @@ service sensors /system/bin/sensors.qcom
     group root
     disabled
 
-# OSS thermal management
-service thermanager /system/bin/thermanager /system/etc/thermanager.xml
-    seclabel u:r:thermanager:s0
-    class late_start
-    user root
-    group root
+service thermal-engine /system/bin/thermal-engine
+   class main
+   user root
+   group root
 
 service time_daemon /system/bin/time_daemon
    class late_start
@@ -783,6 +781,5 @@ on property:service.bootanim.exit=1
 
     start mpdecision
 
-on property:init.svc.bootanim=running
     # Disable LG screen sharpening
     write /sys/devices/virtual/graphics/fb0/sharpening 0
