@@ -91,10 +91,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     bdAddrLoader
 
-# BoringSSL compatability wrapper
-PRODUCT_PACKAGES += \
-    libboringssl-compat
-
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
@@ -191,10 +187,6 @@ PRODUCT_PACKAGES += \
 # RIL symbols
 PRODUCT_PACKAGES += \
     liblge
-
-# Stlport
-PRODUCT_PACKAGES += \
-    libstlport
 
 # Thermal
 PRODUCT_COPY_FILES += \
