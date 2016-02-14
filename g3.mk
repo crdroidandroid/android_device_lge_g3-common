@@ -82,7 +82,6 @@ PRODUCT_PACKAGES += \
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy.conf:system/etc/audio_policy.conf
 
 # Bluetooth
@@ -180,8 +179,7 @@ PRODUCT_PACKAGES += \
     fstab.g3 \
     init.g3.rc \
     init.g3.usb.rc \
-    init.galbi.sensor.sh \
-    init.qcom.early_boot.sh \
+    init.msm8974.sensor.sh \
     init.qcom.sh \
     init.baseband.sh \
     ueventd.g3.rc
