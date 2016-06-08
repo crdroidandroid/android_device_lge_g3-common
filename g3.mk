@@ -201,5 +201,6 @@ PRODUCT_PACKAGES += \
     hostapd \
     hostapd_default.conf \
     libwpa_client \
+    wificond \
     wpa_supplicant \
     wpa_supplicant.conf
