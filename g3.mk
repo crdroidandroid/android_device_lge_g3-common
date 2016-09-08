@@ -172,6 +172,7 @@ PRODUCT_PACKAGES += \
 # Radio
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
+    librmnetctl \
     libxml2
 
 # Ramdisk
@@ -186,10 +187,6 @@ PRODUCT_PACKAGES += \
     init.baseband.sh \
     init.sensors.sh \
     ueventd.g3.rc
-
-# RIL symbols
-PRODUCT_PACKAGES += \
-    liblge
 
 # Thermal
 PRODUCT_COPY_FILES += \
