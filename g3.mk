@@ -146,6 +146,7 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.0-impl \
     com.android.nfc_extras \
     Tag
 
