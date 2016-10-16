@@ -122,6 +122,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     QuickCircle
 
+# Doze mode
+PRODUCT_PACKAGES += \
+    OneplusDoze
+
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8974
