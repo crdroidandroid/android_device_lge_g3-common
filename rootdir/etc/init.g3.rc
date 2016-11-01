@@ -329,10 +329,10 @@ on post-fs-data
 # Services start here
 #
 
-service charger /sbin/healthd -c
+service charger /sbin/charger
     class charger
     critical
-    seclabel u:r:healthd:s0
+    seclabel u:r:charger:s0
 
 service qcom-c_core-sh /system/bin/sh /init.qcom.class_core.sh
     class core
