@@ -266,6 +266,8 @@ static char *camera_fixup_setparams(int id, const char *settings)
     params.dump();
 #endif
 
+    params.set(android::CameraParameters::KEY_PREVIEW_FPS_RANGE, "10000,60000");
+
     params.set(KEY_LGE_CAMERA, (id == 0 && is4k(params)) ? "1" : "0");
 
     if (params.get(android::CameraParameters::KEY_RECORDING_HINT)) {
