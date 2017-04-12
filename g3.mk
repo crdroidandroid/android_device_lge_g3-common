@@ -102,10 +102,6 @@ PRODUCT_PACKAGES += \
     memtrack.msm8974 \
     liboverlay
 
-# Doze
-PRODUCT_PACKAGES += \
-    MotoDoze
-
 # Gello
 PRODUCT_PACKAGES += \
     Gello
