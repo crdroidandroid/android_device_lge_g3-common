@@ -102,9 +102,9 @@ PRODUCT_PACKAGES += \
     memtrack.msm8974 \
     liboverlay
 
-# Gello
+# FlipFlap
 PRODUCT_PACKAGES += \
-    Gello
+    FlipFlap
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
