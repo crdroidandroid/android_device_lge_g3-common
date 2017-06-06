@@ -114,5 +114,8 @@ TARGET_USE_SDCLANG := true
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/lge/g3-common/sepolicy
 
+# Battery info
+BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
+
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
