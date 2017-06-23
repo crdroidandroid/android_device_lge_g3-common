@@ -5,6 +5,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
     vendor.voice.path.for.pcm.voip=true \
     ro.config.vc_call_vol_steps=7 \
+    ro.config.media_vol_steps=25
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.fluence.audiorec=false \
