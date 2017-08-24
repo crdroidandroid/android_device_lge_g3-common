@@ -194,7 +194,8 @@ PRODUCT_PACKAGES += \
 # Radio
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
-    libxml2
+    libxml2 \
+    rild_socket
 
 # Ramdisk
 PRODUCT_PACKAGES += \
