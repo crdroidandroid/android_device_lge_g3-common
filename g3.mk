@@ -121,6 +121,10 @@ PRODUCT_PACKAGES += \
     ebtables \
     ethertypes
 
+# IRDA
+PRODUCT_PACKAGES += \
+    android.hardware.ir@1.0-impl
+
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
