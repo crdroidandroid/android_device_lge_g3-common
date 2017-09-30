@@ -150,10 +150,6 @@ vendor/lib/libuiblur.so
 etc/firmware/a330_pfp.fw
 etc/firmware/a330_pm4.fw
 
-# Media
-vendor/lib/libI420colorconvert.so
-vendor/lib/libmm-color-convertor.so
-
 # Perf
 bin/mpdecision
 vendor/lib/libqti-perfd-client.so
