@@ -27,7 +27,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.ptor.enable=true \
     persist.metadata_dynfps.disable=true \
     ro.opengles.version=196608 \
-    ro.sf.lcd_density=560
+    ro.sf.lcd_density=560 \
+    debug.hwui.use_buffer_age=false
 
 # Qualcomm
 PRODUCT_PROPERTY_OVERRIDES += \
