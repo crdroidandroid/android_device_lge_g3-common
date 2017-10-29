@@ -418,7 +418,7 @@ on property:init.svc.media=restarting
 on property:init.svc.servicemanager=restarting
     restart qcamerasvr
 
-service wcnss-service /system/bin/wcnss_service
+service wcnss-service /vendor/bin/wcnss_service
     class late_start
     user root
     group system wifi
