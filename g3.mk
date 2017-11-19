@@ -80,6 +80,7 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     libqcompostprocbundle \
+    libqcomvoiceprocessingdescriptors \
     libqcomvisualizer \
     libqcomvoiceprocessing
 
