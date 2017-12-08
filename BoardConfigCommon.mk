@@ -104,6 +104,9 @@ DEVICE_MATRIX_FILE := $(LOCAL_PATH)/configs/compatibility_matrix.xml
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
+#Legacy ADB
+TARGET_USES_LEGACY_ADB_INTERFACE := true
+
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
