@@ -110,6 +110,11 @@ etc/firmware/DLdata_rev28B_data1.ecl:vendor/firmware/DLdata_rev28B_data1.ecl
 etc/firmware/DLdata_rev28B_data2.ecl:vendor/firmware/DLdata_rev28B_data2.ecl
 etc/firmware/DLdata_rev28B_data3.ecl:vendor/firmware/DLdata_rev28B_data3.ecl
 
+# FM
+-lib/vendor.qti.hardware.fm@1.0.so|a32ae5e1a604cc0fa0f1e0704616b5af4f0188a9
+vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|f64cc14d4c2ac1387a618ac90bd8688efd9fab1e
+vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so|8ac093a196439dc403b2fa099d838c33242efa82
+
 # Sensors
 bin/sensors.qcom:vendor/bin/sensors.qcom
 vendor/lib/hw/sensors.msm8974.so
