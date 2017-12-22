@@ -88,9 +88,6 @@ DEVICE_MANIFEST_FILE := device/lge/g3-common/configs/manifest.xml
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
-#Legacy ADB
-TARGET_USES_LEGACY_ADB_INTERFACE := true
-
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
