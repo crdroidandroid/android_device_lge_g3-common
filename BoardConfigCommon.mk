@@ -86,6 +86,13 @@ TARGET_USES_ION := true
 # Exclude serif fonts for saving system.img size.
 EXCLUDE_SERIF_FONTS := true
 
+# Dexpreopt
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
+  endif
+endif
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 
