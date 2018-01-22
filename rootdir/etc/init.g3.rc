@@ -347,7 +347,7 @@ service qcom-c_main-sh /system/bin/sh /init.class_main.sh
 service baseband-sh /system/bin/sh /init.baseband.sh
     class late_start
     user root
-    seclabel u:r:qti_init_shell_exec:s0
+    seclabel u:r:qti_init_shell:s0
     oneshot
     disabled
 
@@ -363,14 +363,13 @@ service hwaddrs /vendor/bin/hwaddrs
 service btinit-sh /system/bin/sh /init.qcom.bt.sh
     class core
     user root
-    seclabel u:r:qti_init_shell_exec:s0
     oneshot
     disabled
 
 service cal_sensors-sh /vendor/bin/sh /init.sensors.sh
     class core
     user root
-    seclabel u:r:qti_init_shell_exec:s0
+    seclabel u:r:qti_init_shell:s0
     oneshot
 
 # Running hwaddrs under init is enforcing 0600, we need more
@@ -489,7 +488,7 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
 service lge-sensor-sh /system/bin/sh /init.msm8974.sensor.sh
     class core
     user root
-    seclabel u:r:qti_init_shell_exec:s0
+    seclabel u:r:qti_init_shell:s0
     oneshot
 
 # --> init.qcom.rc <--
@@ -497,7 +496,7 @@ service lge-sensor-sh /system/bin/sh /init.msm8974.sensor.sh
 service qcom-sh /system/bin/sh /init.qcom.sh
     class late_start
     user root
-    seclabel u:r:qti_init_shell_exec:s0
+    seclabel u:r:qti_init_shell:s0
     oneshot
 
 service qmuxd /vendor/bin/qmuxd
