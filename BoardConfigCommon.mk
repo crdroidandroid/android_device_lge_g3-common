@@ -97,7 +97,8 @@ endif
 TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 
 # HIDL
-DEVICE_MANIFEST_FILE := device/lge/g3-common/configs/manifest.xml
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/configs/manifest.xml
+DEVICE_MATRIX_FILE := $(LOCAL_PATH)/configs/compatibility_matrix.xml
 
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
