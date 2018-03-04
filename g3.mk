@@ -130,10 +130,6 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service
 
-# FlipFlap
-PRODUCT_PACKAGES += \
-    FlipFlap
-
 # IPv6 tethering
 PRODUCT_PACKAGES += \
     ebtables \
@@ -232,6 +228,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.bt.sh \
     init.baseband.sh \
+    init.class_main.sh \
     init.sensors.sh \
     ueventd.g3.rc
 
