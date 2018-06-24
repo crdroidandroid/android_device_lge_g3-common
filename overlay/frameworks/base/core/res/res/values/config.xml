@@ -269,4 +269,7 @@
     <bool name="config_dozeAfterScreenOffByDefault">true</bool>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
+    <!-- The default vibration strength, must be between 1 and 255 inclusive. 102 is 40% -->
+    <integer name="config_defaultVibrationAmplitude">102</integer>
+
 </resources>
