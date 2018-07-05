@@ -38,7 +38,23 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.telephony.oosisdc=false \
     ril.subscription.types=NV,RUIM \
-    ro.ril.telephony.mqanelements=5
+    ro.ril.telephony.mqanelements=5 \
+    persist.vendor.radio.force_on_dc=true \
+    persist.radio.custom_ecc=1 \
+    persist.radio.data_con_rprt=1 \
+    persist.radio.data_ltd_sys_ind=1 \
+    persist.radio.ignore_dom_time=10 \
+    persist.radio.rat_on=combine \
+    persist.radio.sib16_support=1 \
+    persist.radio.RATE_ADAPT_ENABLE=1 \
+    persist.radio.ROTATION_ENABLE=1 \
+    persist.radio.VT_ENABLE=1 \
+    persist.radio.VT_HYBRID_ENABLE=1 \
+    persist.radio.is_wps_enabled=true \
+    persist.radio.videopause.mode=1 \
+    persist.radio.sap_silent_pin=1 \
+    persist.radio.always_send_plmn=true \
+    persist.rcs.supported=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.netmgrd.qos.enable=false \
@@ -55,3 +71,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.build.vendor_security_patch=2016-08-01
+
+# VoLTE
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dbg.ims_volte_enable=1 \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1 \
+    persist.radio.calls.on.ims=1
