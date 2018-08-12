@@ -266,4 +266,7 @@
     <!-- The default vibration strength, must be between 1 and 255 inclusive. 102 is 40% -->
     <integer name="config_defaultVibrationAmplitude">102</integer>
 
+    <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
+    <bool name="config_swipe_up_gesture_setting_available">true</bool>
+
 </resources>
