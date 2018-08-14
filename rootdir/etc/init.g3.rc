@@ -346,7 +346,7 @@ on property:vold.decrypt=trigger_restart_framework
 service hwaddrs /vendor/bin/hwaddrs
     class core
     user root
-    group bluetooth wifi
+    group sytem bluetooth
     oneshot
 
 service btinit-sh /vendor/bin/sh /vendor/bin/init.qcom.bt.sh
