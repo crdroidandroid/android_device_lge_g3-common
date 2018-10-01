@@ -400,7 +400,7 @@ service qseecomd /vendor/bin/qseecomd
 service mpdecision /vendor/bin/mpdecision --avg_comp
     class main
     user root
-    group system readproc
+    group root readproc
     disabled
 
 service thermal-engine /vendor/bin/thermal-engine
