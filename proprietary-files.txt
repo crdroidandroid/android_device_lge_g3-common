@@ -174,7 +174,7 @@ vendor/lib/libQSEEComAPI.so
 bin/irsc_util:vendor/bin/irsc_util
 
 # Radio
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:vendor/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -app/shutdownlistener/shutdownlistener.apk:vendor/app/shutdownlistener/shutdownlistener.apk
 bin/radish:vendor/bin/radish
 lib/librmnetctl.so:vendor/lib/librmnetctl.so
