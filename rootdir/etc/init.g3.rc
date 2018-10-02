@@ -261,16 +261,11 @@ on post-fs-data
     mkdir /data/vendor/wifi 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
-    mkdir /data/vendor/wifi/wpa/wpa_supplicant 0770 wifi wifi
-    mkdir /data/vendor/dhcp 0770 dhcp dhcp
-    mkdir /data/vendor/fm 0770 system system
 
     # Make WCNSS_qcom_cfg.ini available in /data/vendor
     symlink /data/misc/wifi/WCNSS_qcom_cfg.ini /data/vendor/wifi/WCNSS_qcom_cfg.ini
 
-    # CONFIG_LGE_WLAN_PATCH
-    # to observe dnsmasq.leases file for dhcp information of soft ap.
-    chown dhcp system /data/misc/dhcp
+    mkdir /data/vendor/fm 0770 system system
 
     # Create directory used by audio subsystem
     mkdir /data/misc/audio 0770 audio audio
