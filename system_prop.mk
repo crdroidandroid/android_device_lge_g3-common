@@ -1,15 +1,13 @@
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
-    audio_hal.period_size=192 \
     media.aac_51_output_enabled=true \
-    use.voice.path.for.pcm.voip=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.audio.fluence.voicecall=true \
-    persist.audio.fluence.voicerec=false \
-    persist.audio.fluence.speaker=true \
-    ro.qc.sdk.audio.fluencetype=fluence
+    persist.vendor.audio.fluence.voicecall=true \
+    persist.vendor.audio.fluence.voicerec=false \
+    persist.vendor.audio.fluence.speaker=true \
+    ro.vendor.audio.fluencetype=fluence \
+    vendor.audio_hal.period_size=192 \
+    vendor.voice.path.for.pcm.voip=true
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
