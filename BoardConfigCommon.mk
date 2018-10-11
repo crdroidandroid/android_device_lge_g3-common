@@ -59,7 +59,7 @@ AUDIO_FEATURE_ENABLED_HFP := true
 AUDIO_FEATURE_ENABLED_NEW_SAMPLE_RATE := true
 AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
 BOARD_USES_ALSA_AUDIO := true
-USE_CUSTOM_AUDIO_POLICY := 1
+#USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Binder
@@ -139,8 +139,8 @@ PRODUCT_SHIPPING_API_LEVEL := 19
 TARGET_USE_SDCLANG := true
 
 # SELinux
-include device/qcom/sepolicy-legacy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/lge/g3-common/sepolicy
+#include device/qcom/sepolicy-legacy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += device/lge/g3-common/sepolicy
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
