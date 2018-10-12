@@ -58,6 +58,7 @@ extract "$MY_DIR"/proprietary-files.txt "$SRC"
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT"
 
 extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC"
+extract "$MY_DIR"/../$DEVICE/proprietary-files-pn547.txt "$SRC"
 
 LIBDSI_NETCTRL="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/lib/libdsi_netctrl.so
 sed -i 's|/system/etc/data/dsi_config.xml|/vendor/etc/data/dsi_config.xml|g' "$LIBDSI_NETCTRL"
