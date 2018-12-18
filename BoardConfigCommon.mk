@@ -89,6 +89,9 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
+# Exclude serif fonts for saving system.img size.
+EXCLUDE_SERIF_FONTS := true
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 
