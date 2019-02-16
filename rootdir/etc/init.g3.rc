@@ -316,7 +316,7 @@ on post-fs-data
 service charger /charger
     class charger
     critical
-    seclabel u:r:charger:s0
+    seclabel u:r:healthd:s0
 
 service qcom-c_core-sh /vendor/bin/sh vendor/bin/init.qcom.class_core.sh
     class core
