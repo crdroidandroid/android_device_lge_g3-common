@@ -48,7 +48,6 @@ LZMA_RAMDISK_TARGETS := recovery
 TARGET_KERNEL_SOURCE := kernel/lge/g3
 TARGET_USES_MKE2FS := true
 TARGET_EXFAT_DRIVER := sdfat
-KERNEL_TOOLCHAIN=$(shell pwd)/prebuilts/gcc/linux-x86/arm/oreo-arm-linux-androideabi-4.9/bin
 
 # Audio
 AUDIO_FEATURE_ENABLED_FLUENCE := true
