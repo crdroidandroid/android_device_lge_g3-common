@@ -260,12 +260,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
-# Telephony
-PRODUCT_PACKAGES += \
-    telephony-ext
- PRODUCT_BOOT_JARS += \
-    telephony-ext
-
 # WiFi Display
 PRODUCT_PACKAGES += \
     libaacwrapper \
