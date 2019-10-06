@@ -94,6 +94,10 @@ PRODUCT_PACKAGES += \
     libbt-vendor \
     hwaddrs
 
+# Binder support symbols
+PRODUCT_PACKAGES += \
+    libshim_binder
+
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl-legacy \
