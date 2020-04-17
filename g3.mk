@@ -237,6 +237,10 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     ueventd.g3.rc
 
+# Recorder
+PRODUCT_PACKAGES += \
+    Recorder
+
 # Recovery
 PRODUCT_PACKAGES += \
     fastbootd
