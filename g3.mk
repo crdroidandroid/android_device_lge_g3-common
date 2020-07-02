@@ -138,9 +138,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl
 
-# Faceunlock
-TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK := true
-
 # FlipFlap
 PRODUCT_PACKAGES += \
     FlipFlap
